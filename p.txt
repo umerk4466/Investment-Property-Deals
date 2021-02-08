@@ -1,0 +1,27 @@
+PUBLIC USERS CAN:
+	- resgiter as a agency.
+	- register as a investor
+	- login the site.
+	- view property deals.
+	- have access to all the property calcualators.
+
+AGENCY USER CAN:
+	- Post/delete/edit property deal.
+	- Comments on own or all the other posts
+	- Delete his commets or edit it.
+	- can book investors time for viewing/information
+	- (send message to investors/agencies)
+
+INVESTOR USER CAN:
+	- Comment on all the posts
+	- Delete his commets or edit it.
+	- send request to agency for viewing/more information
+	- (send message to agency)
+	- Report any post by giving reason.
+
+SUPER USER CAN:
+	- Have all the access to others users actions.
+	- Delete/BLock agency account.
+	- Delete/BLock investor account.
+	- Receive all the reported of the posts.
+	- Delete/BLock agency post.
