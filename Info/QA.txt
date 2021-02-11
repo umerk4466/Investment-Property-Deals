@@ -1,4 +1,4 @@
-PUBLIC USERS CAN :
+PUBLIC USERS CAN:
 	- resgiter as a agency.
 	- register as a investor
 	- login the site.
