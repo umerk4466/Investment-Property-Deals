@@ -1,0 +1,70 @@
+/* global */
+
+
+/* navbar */
+
+.nav-shadow {
+    box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link,
+.dropdown-item {
+    color: dimgray;
+}
+
+.nav-link:hover,
+.dropdown-item:hover {
+    color: black;
+}
+
+.nav-item {
+    padding: 6px;
+}
+
+.navbar-toggler span {
+    display: block;
+    background-color: black;
+    height: 2.5px;
+    width: 23px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    position: relative;
+    left: 0;
+    opacity: 1;
+    transition: all 0.35s ease-out;
+    transform-origin: center left;
+}
+
+
+/**
+ * Animate collapse into X.
+ */
+
+.navbar-toggler:not(.collapsed) span:nth-child(1) {
+    transform: translate(15%, -33%) rotate(45deg);
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(3) {
+    transform: translate(15%, 33%) rotate(-45deg);
+}
+
+
+/**
+   * Animate collapse open into hamburger menu
+   */
+
+.navbar-toggler span:nth-child(1) {
+    transform: translate(0%, 0%) rotate(0deg);
+}
+
+.navbar-toggler span:nth-child(2) {
+    opacity: 1;
+}
+
+.navbar-toggler span:nth-child(3) {
+    transform: translate(0%, 0%) rotate(0deg);
+}
