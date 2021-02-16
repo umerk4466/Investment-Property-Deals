@@ -1,13 +1,30 @@
 /* global variables */
 
 :root {
-    --custom-gray: #F5F5F5;
-    --custom-dimgray: #5f6368;
+    --custom-dimgray: #ced4da;
+    --custom-gray: #5f6368;
     --secondary: #03DAC5;
+    --primary: #F5F5F5;
 }
 
 button:focus {
     outline: 0;
+    box-shadow: 0 0 0 0.1rem var(--custom-dimgray);
+    border-radius: 2px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--custom-gray);
+}
+
+a:hover {
+    text-decoration: inherit;
+    color: black;
+}
+
+.bg-primary {
+    background-color: var(--primary) !important;
 }
 
 
@@ -17,8 +34,9 @@ button:focus {
     background: var(--secondary);
     border-radius: 2px;
     border: 2px solid var(--secondary);
-    padding: 5px 15px;
-    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    margin-top: 0.8rem;
+    color: black;
 }
 
 
@@ -30,7 +48,7 @@ button:focus {
 
 .nav-link,
 .dropdown-item {
-    color: var(--custom-dimgray);
+    color: var(--custom-gray);
 }
 
 .nav-link:hover,
@@ -106,13 +124,31 @@ button:focus {
     background-size: cover;
 }
 
-.search-box {
+.search-form {
     background-color: white;
-    padding: 22px;
+    padding: 25px 22px;
     border-radius: 5px;
+    border: 1px solid var(--custom-dimgray);
 }
 
 .form-control:focus {
     box-shadow: none;
-    border-color: #ced4da;
+    border-color: var(--custom-dimgray);
+}
+
+.row-x-padding {
+    padding: 4rem 0;
+}
+
+
+/* Footer  */
+
+.footer-row {
+    padding: 3rem 0;
+}
+
+.footer-icon {
+    font-size: 30px;
+    padding-right: 1rem;
+    color: black;
 }
