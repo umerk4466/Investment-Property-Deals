@@ -25,7 +25,6 @@
         <a class="navbar-brand" href="#">
             <img src="assets/img/logo.png" width="150" alt="Property Deals Logo" />
         </a>
-
         <button id="nav-btn" class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span> </span>
         <span> </span>
@@ -57,6 +56,57 @@
         </div>
     </nav>
     <!-- End Navbar -->
+
+    <!-- landing page -->
+    <div class="container-fluid landing-page">
+        <div class="row">
+            <div class="col-lg-6 my-auto order-12 order-lg-0">
+                <!-- search form -->
+                <form class="search-box">
+                    <div class="form-group">
+                        <label for="location">Search using 'town name', 'postcode'</label>
+                        <input type="text" class="form-control" id="location" placeholder="e.g. ‘York’, ‘LU3’ or ‘LU21HT’">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-sm-6">
+                            <label for="min_price">Min Price</label>
+                            <input type="text" class="form-control" id="min_price" placeholder="£20,000">
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label for="max_price">Max Price</label>
+                            <input type="text" class="form-control" id="max_price" placeholder="£250,000">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-sm-6">
+                            <label for="property_type">Property Type</label>
+                            <select id="property_type" class="form-control">
+                                <option selected>Show All</option>
+                                <option>Buy To Let</option>
+                                <option>Lease Options</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label for="bedrooms">Bedrooms</label>
+                            <select id="bedrooms" class="form-control">
+                                <option selected>No Min</option>
+                                <option>1+</option>
+                                <option>2+</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="custom-btn mt-3">Start Search</button>
+                </form>
+            </div>
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h1>Find Top Porperty Deals</h1>
+                <p>Dealsourcr puts the power of automation in your hands. Search, stack and market 200,000+ BMV deals (BTL, HMO and BRRR) with ROIs above 20% with the click of a button. Get an edge on the market with our efficient and easy-to-use tools.</p>
+            </div>
+        </div>
+    </div>
+    <!-- End landing section -->
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
