@@ -27,6 +27,27 @@ a:hover {
     background-color: var(--primary) !important;
 }
 
+.single-page-h {
+    padding-top: 12vh;
+    min-height: 88vh;
+}
+
+.white-custom-form {
+    background-color: white;
+    padding: 25px 22px;
+    border-radius: 5px;
+    border: 1px solid var(--custom-dimgray);
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: var(--custom-dimgray);
+}
+
+.row-y-padding {
+    padding: 4rem 0;
+}
+
 
 /* global components style */
 
@@ -116,28 +137,10 @@ a:hover {
 
 /* Landing Page */
 
-.landing-page {
-    padding-top: 12vh;
-    min-height: 88vh;
+.landing-page-img {
     width: 100%;
     background: url("./img/landing-page.webp") center no-repeat;
     background-size: cover;
-}
-
-.search-form {
-    background-color: white;
-    padding: 25px 22px;
-    border-radius: 5px;
-    border: 1px solid var(--custom-dimgray);
-}
-
-.form-control:focus {
-    box-shadow: none;
-    border-color: var(--custom-dimgray);
-}
-
-.row-x-padding {
-    padding: 4rem 0;
 }
 
 
