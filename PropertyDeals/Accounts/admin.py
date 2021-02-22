@@ -5,7 +5,6 @@ from .models import Profile
 from .models import User
 
 
-
 # display profile inside of user model in admin panel
 class ProfileInline(admin.StackedInline):
     model = Profile
