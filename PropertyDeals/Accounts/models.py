@@ -1,8 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-# Create your models here.
-
+# Define models here.
 class User(AbstractUser):
   USER_TYPE_CHOICES = (
       (1, 'Investor'),
@@ -25,6 +24,7 @@ class Profile(models.Model):
         auto_now=False, auto_now_add=False, blank=True, null=True)
   country = models.CharField(max_length=255, blank=True)
   city = models.CharField(max_length=255, blank=True)
+
   GENDER_CHOICES = (
         ('F', 'Female',),
         ('M', 'Male',),
@@ -36,9 +36,25 @@ class Profile(models.Model):
 
 class Investor(models.Model):
   user = models.OneToOneField(User, on_delete=models.CASCADE)
+  post_code = models.CharField(max_length=255)
+  # preferred_investment = 
+
 
 class DealSourcer(models.Model):
   user = models.OneToOneField(User, on_delete=models.CASCADE)
+  post_code = models.CharField(max_length=255)
+  specialized_in = models.CharField(max_length=255, blank=True)
+  
+
+# class DealSourcerCompany():
+#   deal_sourcer = models.OneToOneField(User, on_delete=models.CASCADE)
+#   name = 
+#   website = 
+#   phone_number =
+#   email = 
+#   post_code = 
+
+
 
 class Admin(models.Model):
   user = models.OneToOneField(User, on_delete=models.CASCADE)
