@@ -33,7 +33,7 @@ class Profile(models.Model):
   gender = models.CharField(max_length=1, choices=GENDER_CHOICES, blank=True)
 
   def __str__(self):
-        return self.user.username
+    return self.user.username
 
 class Investor(models.Model):
   user = models.OneToOneField(User, on_delete=models.CASCADE)
