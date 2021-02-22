@@ -1,7 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-# Define models here.
+# Define custom user model
 class User(AbstractUser):
   USER_TYPE_CHOICES = (
       (1, 'Investor'),
@@ -9,7 +9,6 @@ class User(AbstractUser):
       (3, 'Admin'),
       (4, 'Super admin'),
   )
-
   user_type = models.PositiveSmallIntegerField(choices=USER_TYPE_CHOICES,  default=USER_TYPE_CHOICES[0][0])
 # https://github.com/pydanny/multiple-user-types-django/blob/master/spybook/users/models.py
 
@@ -23,6 +22,7 @@ class Profile(models.Model):
   date_of_birth = models.DateField(
         auto_now=False, auto_now_add=False, blank=True, null=True)
   country = models.CharField(max_length=255, blank=True)
+  post_code = models.CharField(max_length=255, blank=True)
   city = models.CharField(max_length=255, blank=True)
 
   GENDER_CHOICES = (
@@ -34,15 +34,9 @@ class Profile(models.Model):
   def __str__(self):
     return self.user.username
 
-class Investor(models.Model):
-  user = models.OneToOneField(User, on_delete=models.CASCADE)
-  post_code = models.CharField(max_length=255)
-  # preferred_investment = 
-
 
 class DealSourcer(models.Model):
   user = models.OneToOneField(User, on_delete=models.CASCADE)
-  post_code = models.CharField(max_length=255)
   specialized_in = models.CharField(max_length=255, blank=True)
   
 

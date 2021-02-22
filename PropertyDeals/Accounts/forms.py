@@ -13,9 +13,22 @@ class InvestorSignup(UserCreationForm):
         self.fields['first_name'].label = "First Name"
         self.fields['last_name'].label = "Last Name"
 
-    post_code = forms.CharField(label="Post Code", max_length=255)
+    class Meta:
+        model = User
+        fields = ['first_name','last_name', 'username', 'password1', 'password2' ]
 
+
+# deal sourcer signup form
+class DealSourcerSignup(UserCreationForm):
+    def __init__(self, *args, **kwargs):
+        super(DealSourcerSignup, self).__init__(*args, **kwargs)
+        # below changing on the fields of this form.
+        self.fields['first_name'].label = "First Name"
+        self.fields['last_name'].label = "Last Name"
+        self.fields['email'].required = True
+
+    post_code = forms.CharField(label="Post Code", max_length=255)
 
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'post_code', 'username', 'password1', 'password2' ]
+        fields = ['first_name', 'last_name','email', 'post_code', 'username', 'password1', 'password2' ]
