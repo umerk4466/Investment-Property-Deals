@@ -8,7 +8,6 @@ from .models import Admin
 
 
 
-
 # display profile inside of user model in admin panel
 class ProfileInline(admin.StackedInline):
     model = Profile
@@ -35,5 +34,4 @@ class CustomUserAdmin(UserAdmin):
 admin.site.register(User, CustomUserAdmin)
 admin.site.register(DealSourcer)
 admin.site.register(Admin)
-admin.site.register(Profile)
 
