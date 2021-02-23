@@ -1,0 +1,39 @@
+{% extends "Accounts/base.html" %} 
+{% block title %}Login{% endblock %} 
+{% block content %}
+<!-- login page -->
+<div class="single-page-h bg-primary">
+    <div class="container">
+        <div class="row pb-5 justify-content-lg-center">
+            <div class="col-lg-4 col-md-6 my-auto order-12 order-md-0">
+                <!-- Login form -->
+                <form class="white-custom-form">
+                    <h4 class="mb-4">Login</h4>
+                    {% csrf_token %} {% load crispy_forms_tags %} {{ form|crispy }}
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="keep_logged_in">
+                        <label class="form-check-label" for="keep_logged_in">
+                            Keep me logged in
+                        </label>
+                    </div>
+                    <button type="submit" class="btn custom-btn w-100">Login</button>
+                    <p class="mt-4 text-center">New Here? <span><a href="#">Create an account</a></span></p>
+                </form>
+            </div>
+            <div class="col-lg-5 col-md-6 my-auto d-none d-md-block">
+                <h2 class="mb-3">New to PropertyDeals?</h2>
+                <p>Create an account so you can:</p>
+                <p><i class="fa fa-home mr-2"></i>View unlimited properties</p>
+                <p><i class="fa fa-check mr-2"></i>Book unlimited viewings</p>
+                <p><i class="fa fa-comment mr-2"></i>Message to deals sourcers</p>
+                <p><i class="fa fa-reply mr-2 mb-2"></i>Comments on property deals</p>
+                <a href="#" class="btn border p-2">Create an account</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

@@ -6,16 +6,7 @@ from .models import User, DealSourcer, Profile
 
 # Create your views here.
 def landing_page(request):
-    return render(request,'Accounts/home.html')
-
-
-def login(request):
-    return render(request,'Accounts/login.html')
-
-
-def logout(request):
-    return render(request,'Accounts/logout.html')
-
+    return render(request,'Accounts/landing_page.html')
 
 def investor_signup(request):
     if request.method == 'POST':

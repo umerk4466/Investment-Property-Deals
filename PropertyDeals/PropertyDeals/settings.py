@@ -127,6 +127,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # change default user model to custom user model
 AUTH_USER_MODEL = 'Accounts.User'
+# logim redirect page
+LOGIN_REDIRECT_URL = 'home'
+LOGIN_URL = 'login'
 
 #  crispy form setting
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
