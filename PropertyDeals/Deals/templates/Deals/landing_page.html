@@ -18,13 +18,8 @@
             </div>
           </div>
           <div class="form-row">
-            <div class="form-group col-sm-6">
-              <label for="property_type">Property Type</label>
-              <select id="property_type" class="form-control">
-                <option selected>Show All</option>
-                <option>Buy To Let</option>
-                <option>Lease Options</option>
-              </select>
+            <div class="col-sm-6">
+              {{ serch_form.property_type|as_crispy_field }}
             </div>
             <div class="col-sm-6">
               {{ serch_form.max_bedroom|as_crispy_field }}
