@@ -1,5 +1,5 @@
 {% extends "Accounts/base.html" %} {% block title %} PropertyDeals {%endblock %}
-{% block content %} {% load static %}
+{% block content %} {% load static %} {% load crispy_forms_tags %}
 
 <!-- landing page -->
 <div class="landing-page-img single-page-h">
@@ -66,6 +66,14 @@
           with the click of a button. Get an edge on the market with our
           efficient and easy-to-use tools.
         </p>
+
+        {% comment %} search form {% endcomment %}
+        <form method="POST" class="white-custom-form">
+          <h4 class="mb-4">Create an sourcer account</h4>
+          {% csrf_token %} {{ serch_form|crispy }}
+          <button type="submit" class="btn custom-btn w-100">Check form</button>
+        </form>
+        {% comment %} end serchform {% endcomment %}
       </div>
     </div>
   </div>
