@@ -5,9 +5,6 @@ from .models import User, DealSourcer, Profile
 
 
 # Create your views here.
-def landing_page(request):
-    return render(request,'Accounts/landing_page.html')
-
 def investor_signup(request):
     if request.method == 'POST':
         form = InvestorSignup(request.POST)
