@@ -8,33 +8,13 @@
       <div class="col-lg-6 my-auto order-12 order-lg-0">
         <!-- search form -->
         <form class="white-custom-form">
-          <div class="form-group">
-            <label for="location">Search using 'town name', 'postcode'</label>
-            <input
-              type="text"
-              class="form-control"
-              id="location"
-              placeholder="e.g. ‘York’, ‘LU3’ or ‘LU21HT’"
-            />
-          </div>
+          {% csrf_token %} {{ serch_form.place|as_crispy_field }}
           <div class="form-row">
-            <div class="form-group col-sm-6">
-              <label for="min_price">Min Price</label>
-              <input
-                type="text"
-                class="form-control"
-                id="min_price"
-                placeholder="£20,000"
-              />
+            <div class="col-sm-6">
+              {{ serch_form.min_price_choises|as_crispy_field }}
             </div>
-            <div class="form-group col-sm-6">
-              <label for="max_price">Max Price</label>
-              <input
-                type="text"
-                class="form-control"
-                id="max_price"
-                placeholder="£250,000"
-              />
+            <div class="col-sm-6">
+              {{ serch_form.max_price_choises|as_crispy_field }}
             </div>
           </div>
           <div class="form-row">
@@ -46,13 +26,8 @@
                 <option>Lease Options</option>
               </select>
             </div>
-            <div class="form-group col-sm-6">
-              <label for="bedrooms">Bedrooms</label>
-              <select id="bedrooms" class="form-control">
-                <option selected>No Min</option>
-                <option>1+</option>
-                <option>2+</option>
-              </select>
+            <div class="col-sm-6">
+              {{ serch_form.max_bedroom|as_crispy_field }}
             </div>
           </div>
           <button type="submit" class="btn custom-btn">Start Search</button>
@@ -66,14 +41,6 @@
           with the click of a button. Get an edge on the market with our
           efficient and easy-to-use tools.
         </p>
-
-        {% comment %} search form {% endcomment %}
-        <form method="POST" class="white-custom-form">
-          <h4 class="mb-4">Create an sourcer account</h4>
-          {% csrf_token %} {{ serch_form|crispy }}
-          <button type="submit" class="btn custom-btn w-100">Check form</button>
-        </form>
-        {% comment %} end serchform {% endcomment %}
       </div>
     </div>
   </div>
