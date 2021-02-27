@@ -7,3 +7,11 @@ class PropertyType(models.Model):
 
     def __str__(self):
         return self.name
+
+class Property(models.Model):
+    property_type = models.ForeignKey(PropertyType, on_delete=models.CASCADE)
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.title
