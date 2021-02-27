@@ -7,14 +7,14 @@
     <div class="row pb-5">
       <div class="col-lg-6 my-auto order-12 order-lg-0">
         <!-- search form -->
-        <form class="white-custom-form">
-          {% csrf_token %} {{ serch_form.place|as_crispy_field }}
+        <form method="post" class="white-custom-form">
+          {% csrf_token %} {{ serch_form.location|as_crispy_field }}
           <div class="form-row">
             <div class="col-sm-6">
-              {{ serch_form.min_price_choises|as_crispy_field }}
+              {{ serch_form.min_price|as_crispy_field }}
             </div>
             <div class="col-sm-6">
-              {{ serch_form.max_price_choises|as_crispy_field }}
+              {{ serch_form.max_price|as_crispy_field }}
             </div>
           </div>
           <div class="form-row">

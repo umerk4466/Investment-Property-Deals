@@ -11,3 +11,6 @@ def landing_page(request):
     else:
         serch_form = SearchDeal()
     return render(request,'Deals/landing_page.html', {'serch_form': serch_form})
+
+def search_property(requests):
+    pass
