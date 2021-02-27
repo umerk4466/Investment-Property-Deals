@@ -10,4 +10,3 @@ class SearchDeal(forms.Form):
     # min_bedroom = forms.ChoiceField(label="Min Bedroom", choices = BEDROOM_LIST, initial='0', required = False,)
     max_bedroom = forms.ChoiceField(label="Max Bedroom", choices = BEDROOM_LIST, initial='0', required = False,)
     property_type = forms.ModelChoiceField(queryset=PropertyType.objects.all(), to_field_name="name", empty_label="All Types", required = False,) 
-
