@@ -19,11 +19,11 @@ class Property(models.Model):
         return self.title
 
 
-# class PlacesUk(models.Model):
-#     region = models.CharField(max_length=255, blank=True)
-#     destrict = models.CharField(max_length=255, blank=True)
-#     city = models.CharField(max_length=255, blank=True)
-#     postcode = models.CharField(max_length=255, blank=True)
+class PlacesUk(models.Model):
+    region = models.CharField(max_length=255, blank=True)
+    destrict = models.CharField(max_length=255, blank=True)
+    city = models.CharField(max_length=255, blank=True)
+    postcode = models.CharField(max_length=255, blank=True)
 
-#     def __str__(self):
-#         return self.region
+    def __str__(self):
+        return self.region

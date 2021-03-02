@@ -3,8 +3,8 @@ from Deals.choise_field_lists import PRICE_LIST,BEDROOM_LIST
 from .models import PropertyType
 
 class SearchDeal(forms.Form):
-    location = forms.CharField(label="Search using 'town name', 'postcode'",max_length=255, 
-                    widget=forms.TextInput(attrs={'placeholder': 'e.g. ‘York’, ‘LU3’ or ‘LU21HT’'}))
+    location = forms.CharField(label="Search using 'town name', 'postcode'",max_length=255, widget=forms.TextInput(attrs={'placeholder': "e.g. ‘York’, ‘LU3’ or ‘LU21HT",
+            'data-url': "http://127.0.0.1:8000/location_autocomplete/"}))
     min_price = forms.ChoiceField(label="Min Price (£)", choices = PRICE_LIST, initial='0', required = False)
     max_price = forms.ChoiceField(label="Max Price (£)", choices = PRICE_LIST, initial='0', required = False,)
     # min_bedroom = forms.ChoiceField(label="Min Bedroom", choices = BEDROOM_LIST, initial='0', required = False,)
