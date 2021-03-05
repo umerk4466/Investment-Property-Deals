@@ -7,8 +7,7 @@
       <div class="col-lg-6 my-auto order-12 order-lg-0">
         <!-- search form -->
         <form method="post" class="white-custom-form">
-          {% csrf_token %} 
-          {{ serch_form.location|as_crispy_field }}
+          {% csrf_token %} {{ serch_form.location|as_crispy_field }}
           <div class="form-row">
             <div class="col-sm-6">
               {{ serch_form.min_price|as_crispy_field }}
@@ -102,23 +101,11 @@
     </div>
   </div>
 </div>
-{% endblock %}
-{% block javascript %}
-{{ block.super }}
-<script src="https://cdn.rawgit.com/xcash/bootstrap-autocomplete/3de7ad37/dist/latest/bootstrap-autocomplete.js"></script>
+{% endblock %} {% block javascript %} {{ block.super }}
+<script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
 <script>
-  $(function(){
-    $('#id_location').autoComplete(
-        {minLength: 1}
-    );
-    $('.dropdown-menu').css({'top': 'auto', 'left': 'auto'})
+  $(function () {
+    $("#id_location").autoComplete({ minLength: 1 });
   });
 </script>
 {% endblock %}
-
-
-
-
-
-
-
