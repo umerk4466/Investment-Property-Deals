@@ -220,5 +220,5 @@ a:hover {
 .dropdown-item.active,
 .dropdown-item:active {
     background-color: var(--primary) !important;
-    color: inherit !importants;
+    color: inherit !important;
 }
