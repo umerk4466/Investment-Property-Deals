@@ -22,8 +22,8 @@ def search_property(requests):
 def location_autocomplete(request):
     if request.GET.get('q') and request.is_ajax():
         q = request.GET['q']
-        town_county = UkTownAndCounty.objects.filter(town_and_county__istartswith=q).values_list('town_and_county', flat=True)[:5]
-        postcode = UkPostcode.objects.filter(postcode__istartswith=q).values_list('postcode', flat=True)[:5]
+        town_county = UkTownAndCounty.objects.filter(town_and_county__istartswith=q).values_list('town_and_county', flat=True)[:3]
+        postcode = UkPostcode.objects.filter(postcode__istartswith=q).values_list('postcode', flat=True)[:2]
         json = list(chain(town_county, postcode))
         return JsonResponse(json, safe=False)
     else:
