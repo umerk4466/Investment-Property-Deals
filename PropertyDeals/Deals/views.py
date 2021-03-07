@@ -1,38 +1,12 @@
 from django.shortcuts import render, redirect
 from .forms import SearchDeal
-from .models import UkTownAndCounty,UkPostcode
+from .models import UkTownAndCounty, UkPostcode
 
 from django.http import HttpResponse, JsonResponse
 from itertools import chain
 
-import csv
-import os
-from django.conf import settings
-
-def create_csv_uk_town_county():
-     with open(os.path.join(settings.BASE_DIR,'Deals', 'places', 'uk_towns_and_counties.csv')) as f:
-        reader = csv.reader(f)
-        for row in reader:
-            created = UkTownAndCounty.objects.get_or_create(
-                town_and_county=row[1]+", "+row[2],
-                )
-
-
-def create_csv_uk_postcode():
-     with open(os.path.join(settings.BASE_DIR,'Deals', 'places', 'uk_postcode_and_latitude_longitude.csv')) as f:
-        reader = csv.reader(f)
-        for row in reader:
-            created = UkPostcode.objects.get_or_create(
-                postcode=row[1],
-                )
-
 # Create your views here.
 def landing_page(request):
-    # create_csv_uk_town_county()
-    # create_csv_uk_postcode()
-    # UkPostcode.objects.all().delete()
-    # UkTownAndCounty.objects.all().delete()
-
     if request.method == 'POST':
         serch_form = SearchDeal(request.POST)
         if serch_form.is_valid():
@@ -55,4 +29,26 @@ def location_autocomplete(request):
     else:
         HttpResponse("None")
 
+
+
+# csv to django model imports
+import csv
+import os
+from django.conf import settings
+
+def create_csv_uk_town_county():
+     with open(os.path.join(settings.BASE_DIR,'Deals', 'places', 'uk_towns_and_counties.csv')) as f:
+        reader = csv.reader(f)
+        for row in reader:
+            created = UkTownAndCounty.objects.get_or_create(
+                town_and_county=row[1]+", "+row[2],
+                )
+
+def create_csv_uk_postcode():
+     with open(os.path.join(settings.BASE_DIR,'Deals', 'places', 'uk_postcode_and_latitude_longitude.csv')) as f:
+        reader = csv.reader(f)
+        for row in reader:
+            created = UkPostcode.objects.get_or_create(
+                postcode=row[1],
+                )
 
