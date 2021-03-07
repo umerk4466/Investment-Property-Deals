@@ -5,23 +5,33 @@ from .models import UkTownAndCounty, UkPostcode
 from django.http import HttpResponse, JsonResponse
 from itertools import chain
 
+from django.urls import reverse
+from urllib.parse import urlencode
+
 # Create your views here.
 def landing_page(request):
     if request.method == 'POST':
         serch_form = SearchDeal(request.POST)
         if serch_form.is_valid():
+            # get data
             location = serch_form.cleaned_data['location']
             min_price = serch_form.cleaned_data['min_price']
             max_price = serch_form.cleaned_data['max_price']
             max_bedroom = serch_form.cleaned_data['max_bedroom']
             property_type = serch_form.cleaned_data['property_type']
-            return redirect('search_property',location,min_price,max_price,max_bedroom,property_type)
+            # design url and redirect
+            base_url = reverse('search_property')
+            query_string =  urlencode({'location': location, 'min_price': min_price, 'max_price': max_price, 'max_bedroom': max_bedroom, 'property_type': property_type,}) 
+            url = '{}?{}'.format(base_url, query_string)
+            return redirect(url)
     else:
         serch_form = SearchDeal()
     return render(request,'Deals/landing_page.html', {'serch_form': serch_form})
 
-def search_property(request,location,min_price,max_price,max_bedroom,property_type):
+def search_property(request):
     if request.method == 'GET':
+        # receive data
+        location = request.GET.get('location')
         # properyty object and pass to the templates
         return render(request,'Deals/search_property.html')
 
