@@ -10,13 +10,21 @@ def landing_page(request):
     if request.method == 'POST':
         serch_form = SearchDeal(request.POST)
         if serch_form.is_valid():
-            return redirect('login')
+            location = serch_form.cleaned_data['location']
+            min_price = serch_form.cleaned_data['min_price']
+            max_price = serch_form.cleaned_data['max_price']
+            max_bedroom = serch_form.cleaned_data['max_bedroom']
+            property_type = serch_form.cleaned_data['property_type']
+            return redirect('search_property',location,min_price,max_price,max_bedroom,property_type)
     else:
         serch_form = SearchDeal()
     return render(request,'Deals/landing_page.html', {'serch_form': serch_form})
 
-def search_property(requests):
-    pass
+def search_property(request,location,min_price,max_price,max_bedroom,property_type):
+    if request.method == 'GET':
+        # properyty object and pass to the templates
+        return render(request,'Deals/search_property.html')
+
 
 
 def location_autocomplete(request):
