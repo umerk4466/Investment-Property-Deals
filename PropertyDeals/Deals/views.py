@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import SearchDeal
-from .models import UkTownAndCounty, UkPostcode
+from .models import UkTownAndCounty, UkPostcode, Property
 
 from django.http import HttpResponse, JsonResponse
 from itertools import chain
@@ -32,8 +32,12 @@ def search_property(request):
     if request.method == 'GET':
         # receive data
         location = request.GET.get('location')
+
+        properties = Property.objects.all()
+
+        context = {'properties':properties}
         # properyty object and pass to the templates
-        return render(request,'Deals/search_property.html')
+        return render(request,'Deals/search_property.html', context)
 
 
 
