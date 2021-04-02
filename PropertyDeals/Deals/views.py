@@ -30,7 +30,6 @@ def landing_page(request):
 
 def search_property(request):
     if request.method == 'GET':
-        
         # receive data
         location = request.GET.get('location')
 
