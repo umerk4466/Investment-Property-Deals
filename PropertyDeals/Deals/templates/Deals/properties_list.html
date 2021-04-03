@@ -1,0 +1,10 @@
+
+<form method="post" class="white-custom-form">
+    {% csrf_token %} {{ serch_form.as_table }}
+    <button type="submit">submit</button>
+    </form>
+
+
+{% for property in properties %}
+    <p>{{property.title}}</p>
+{% endfor %}

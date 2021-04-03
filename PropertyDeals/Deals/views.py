@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import SearchDeal
-from .models import UkTownAndCounty, UkPostcode, Property
+from .models import UkTownAndCounty, UkPostcode, Property, PropertyType, PropertyInvestmentType
 
 from django.http import HttpResponse, JsonResponse
 from itertools import chain
@@ -32,13 +32,28 @@ def search_property(request):
     if request.method == 'GET':
         # receive data
         location = request.GET.get('location')
+        property_type = request.GET.get('property_type')
 
-        properties = Property.objects.all()
-
-        context = {'properties':properties}
+        properties = Property.objects.filter(property_type__name=property_type)
+        serch_form = SearchDeal()
+        context = {'properties':properties, 'serch_form': serch_form }
         # properyty object and pass to the templates
-        return render(request,'Deals/search_property.html', context)
-
+        return render(request,'Deals/properties_list.html', context)
+    
+    if request.method == 'POST':
+        serch_form = SearchDeal(request.POST)
+        if serch_form.is_valid():
+            # get data
+            location = serch_form.cleaned_data['location']
+            min_price = serch_form.cleaned_data['min_price']
+            max_price = serch_form.cleaned_data['max_price']
+            max_bedroom = serch_form.cleaned_data['max_bedroom']
+            property_type = serch_form.cleaned_data['property_type']
+            # design url and redirect
+            base_url = reverse('search_property')
+            query_string =  urlencode({'location': location, 'min_price': min_price, 'max_price': max_price, 'max_bedroom': max_bedroom, 'property_type': property_type,}) 
+            url = '{}?{}'.format(base_url, query_string)
+            return redirect(url)
 
 
 def location_autocomplete(request):

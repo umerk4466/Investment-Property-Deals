@@ -9,8 +9,16 @@ class PropertyType(models.Model):
     def __str__(self):
         return self.name
 
+class PropertyInvestmentType(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.name
+
 class Property(models.Model):
     property_type = models.ForeignKey(PropertyType, on_delete=models.CASCADE)
+    property_investment_type = models.ForeignKey(PropertyInvestmentType, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     description = models.TextField()
 
