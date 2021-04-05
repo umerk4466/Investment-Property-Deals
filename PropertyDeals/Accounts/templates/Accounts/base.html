@@ -35,7 +35,9 @@
         />
         {% load static %}
         <link rel="stylesheet" href="{% static 'Accounts/css/base.css' %}" />
-        <title>{% block title %} Property Deals {% endblock %}</title>
+        {% block template_style %}
+        {% endblock template_style %}
+        <title>{% block title %} PropertyDeals {% endblock %}</title>
       </head>
 
       <body>
