@@ -1,10 +1,31 @@
+{% extends "Accounts/base.html" %} {% block title %} PropertyDeals | Search {%endblock %}
+{% block content %} {% load static %} {% load crispy_forms_tags %}
 
-<form method="post" class="white-custom-form">
-    {% csrf_token %} {{ serch_form.as_table }}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            </div>
+        </div>
+</div>
+
+
+
+<!-- <form method="post" class="white-custom-form">
+    {% csrf_token %} {{ serch_form|crispy }}
     <button type="submit">submit</button>
-    </form>
+</form> -->
 
 
 {% for property in properties %}
     <p>{{property.title}}</p>
 {% endfor %}
+
+{% endblock %} {% block javascript %} {{ block.super }}
+<script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
+<script>
+  $(function () {
+    $("#id_location").autoComplete({ minLength: 1 });
+  });
+</script>
+{% endblock %}
