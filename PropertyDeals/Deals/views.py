@@ -33,7 +33,6 @@ def search_property(request):
         # receive data
         location = request.GET.get('location')
         property_type = request.GET.get('property_type')
-
         properties = Property.objects.filter(property_type__name=property_type)
         serch_form = SearchDeal()
         context = {'properties':properties, 'serch_form': serch_form }
