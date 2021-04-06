@@ -1,3 +1,4 @@
-body {
-  background-color: aqua !important;
+.filter-top-bar {
+  height: 4rem;
+  background-color: cadetblue;
 }

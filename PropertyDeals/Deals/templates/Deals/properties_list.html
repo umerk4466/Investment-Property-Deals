@@ -6,12 +6,31 @@
     <link rel="stylesheet" href="{% static 'Deals/css/style.css' %}" />
 {% endblock template_style %}
 
-{% block content %} {% load crispy_forms_tags %}
+{% block content %}
+{% load form_tags %}
 
 
+<form method="post">
+    {% csrf_token %}
+
+<div class="filter-top-bar">
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="col-md-3 my-auto">{{ serch_form.location | addclass:"form-control" }}</div>
+            <div class="col-md-2 my-auto">{{ serch_form.min_price | addclass:"form-control" }}</div>
+            <div class="col-md-2 my-auto">{{ serch_form.max_price | addclass:"form-control" }}</div>
+            <div class="col-md-2 my-auto">{{ serch_form.min_bedroom | addclass:"form-control" }}</div>
+            <div class="col-md-2 my-auto">{{ serch_form.max_bedroom | addclass:"form-control" }}</div>
+            <!-- <div class="col my-auto">{{ serch_form.property_type }}</div> -->
+            <!-- <div class="col my-auto">{{ serch_form.Property_investment_type }}</div> -->
+            <div class="col-md-1 my-auto"><button class="btn btn-primary">Fileter</button></div>
+        </div>
+    </div>
+</div>
+
+</form>
 
 
-<div class="g">sshhs</div>
 <div class="container">
     <div class="row row-y-padding">
         <div class="col">
@@ -19,13 +38,6 @@
             </div>
         </div>
 </div>
-
-
-
-<!-- <form method="post" class="white-custom-form">
-    {% csrf_token %} {{ serch_form|crispy }}
-    <button type="submit">submit</button>
-</form> -->
 
 
 {% for property in properties %}
