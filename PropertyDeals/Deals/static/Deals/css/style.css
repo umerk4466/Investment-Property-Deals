@@ -23,3 +23,11 @@
   width: 0.5em;
   margin-left: 6px;
 }
+
+#custom-modal {
+  background-color: violet;
+  position: absolute;
+  z-index: 999;
+  display: none;
+  height: 70vh;
+}

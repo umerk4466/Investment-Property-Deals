@@ -17,19 +17,29 @@
     <form method="post">
         {% csrf_token %}
         <div class="row align-items-center">
-            <div class="col-3">{{ serch_form.location | addclass:"form-control" }}</div>
-            <div class="col-2">{{ serch_form.min_price | addclass:"form-control" }}</div>
-            <div class="col-2">{{ serch_form.max_price | addclass:"form-control" }}</div>
-            <div class="col-2">{{ serch_form.min_bedroom | addclass:"form-control" }}</div>
-            <div class="col-2">{{ serch_form.max_bedroom | addclass:"form-control" }}</div>
+            <div class="col-3">{{ serch_form.location | addclass:"form-control form-control-sm" }}</div>
+            <div class="col-2">{{ serch_form.min_price | addclass:"form-control form-control-sm" }}</div>
+            <div class="col-2">{{ serch_form.max_price | addclass:"form-control form-control-sm" }}</div>
+            <div class="col-2">{{ serch_form.min_bedroom | addclass:"form-control form-control-sm" }}</div>
+            <div class="col-2">{{ serch_form.max_bedroom | addclass:"form-control form-control-sm" }}</div>
             <!-- <div class="col">{{ serch_form.property_type }}</div> 
             <div class="col">{{ serch_form.Property_investment_type }}</div>-->
             <div class="col-1">
-                <button class="filter-btn btn">Filters</button>
+                <button id="filter-btn" class="filter-btn btn btn-sm">Filters</button>
             </div>
         </div>
     </form>
 </div>
+
+<!-- Custom Modal Div -->
+<div id="custom-modal" class="container-fluid">
+    <div class="row">
+        <div class="col">col one</div>
+        <div class="col">col two</div>
+
+    </div>
+</div>
+
 
 
 <div class="container">
