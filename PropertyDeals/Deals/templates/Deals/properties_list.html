@@ -13,18 +13,20 @@
 
 
 <!-- filter for large screen -->
-<div class="container-fluid lg-top-filter-nav nav-shadow d-lg-block d-none">
-    <form method="post" class="h-100">
+<div class="container-fluid lg-top-filter-nav d-lg-block d-none">
+    <form method="post">
         {% csrf_token %}
-        <div class="row h-100">
-            <div class="col-3 my-auto">{{ serch_form.location | addclass:"form-control" }}</div>
-            <div class="col-2 my-auto">{{ serch_form.min_price | addclass:"form-control" }}</div>
-            <div class="col-2 my-auto">{{ serch_form.max_price | addclass:"form-control" }}</div>
-            <div class="col-2 my-auto w-50">{{ serch_form.min_bedroom | addclass:"form-control" }}</div>
-            <div class="col-2 my-auto">{{ serch_form.max_bedroom | addclass:"form-control" }}</div>
-            <!-- <div class="col my-auto">{{ serch_form.property_type }}</div> 
-            <div class="col my-auto">{{ serch_form.Property_investment_type }}</div>-->
-            <div class="col-1 my-auto"><button class="btn custom-btn m-0">Advance</button></div>
+        <div class="row align-items-center">
+            <div class="col-3">{{ serch_form.location | addclass:"form-control" }}</div>
+            <div class="col-2">{{ serch_form.min_price | addclass:"form-control" }}</div>
+            <div class="col-2">{{ serch_form.max_price | addclass:"form-control" }}</div>
+            <div class="col-2">{{ serch_form.min_bedroom | addclass:"form-control" }}</div>
+            <div class="col-2">{{ serch_form.max_bedroom | addclass:"form-control" }}</div>
+            <!-- <div class="col">{{ serch_form.property_type }}</div> 
+            <div class="col">{{ serch_form.Property_investment_type }}</div>-->
+            <div class="col-1">
+                <button class="filter-btn btn">Filters</button>
+            </div>
         </div>
     </form>
 </div>
