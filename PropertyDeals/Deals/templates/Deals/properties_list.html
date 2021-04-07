@@ -16,7 +16,7 @@
 <div class="container-fluid lg-top-filter-nav nav-shadow d-lg-block d-none">
     <form method="post" class="h-100">
         {% csrf_token %}
-        <div class="row h-100">
+        <div class="row h-10">
             <div class="col-3 my-auto">{{ serch_form.location | addclass:"form-control" }}</div>
             <div class="col-2 my-auto">{{ serch_form.min_price | addclass:"form-control" }}</div>
             <div class="col-2 my-auto">{{ serch_form.max_price | addclass:"form-control" }}</div>
