@@ -25,14 +25,14 @@
             <!-- <div class="col">{{ serch_form.property_type }}</div> 
             <div class="col">{{ serch_form.Property_investment_type }}</div>-->
             <div class="col-1">
-                <button id="filter-btn" class="filter-btn btn btn-sm">Filters</button>
+                <button id="filter-btn" onclick="toggle_visibility('custom-modal')" class="filter-btn btn btn-sm">Filters</button>
             </div>
         </div>
     </form>
 </div>
 
 <!-- Custom Modal Div -->
-<div id="custom-modal" class="container-fluid">
+<div id="custom-modal" class="container-fluid hide-filter">
     <div class="row">
         <div class="col">col one</div>
         <div class="col">col two</div>
